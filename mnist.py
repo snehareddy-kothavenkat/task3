@@ -1,6 +1,6 @@
 import os
 import tensorflow as tf
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import numpy as np 
 import keras 
 from keras.datasets import mnist 
@@ -50,10 +50,10 @@ model.compile(optimizer=keras.optimizers.Adadelta(),
 			loss=keras.losses.categorical_crossentropy, 
 			metrics=['accuracy'])
 #callbacks
-from keras.callbacks import ModelCheckpoint, EarlyStopping
-checkpoint = ModelCheckpoint("mnist.h5", monitor="val_loss", mode="min", verbose=1)
-earlystop = EarlyStopping(monitor = 'val_loss', min_delta = 0, patience = 10, verbose = 1,restore_best_weights = True)
-callbacks = [earlystop, checkpoint]
+#from keras.callbacks import ModelCheckpoint, EarlyStopping
+#checkpoint = ModelCheckpoint("mnist.h5", monitor="val_loss", mode="min", verbose=1)
+#earlystop = EarlyStopping(monitor = 'val_loss', min_delta = 0, patience = 10, verbose = 1,restore_best_weights = True)
+#callbacks = [earlystop, checkpoint]
 #training model
 epochs = 1
 model.fit(x_train, y_train, epochs = epochs, batch_size=1)
