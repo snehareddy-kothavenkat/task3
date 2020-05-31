@@ -56,7 +56,7 @@ earlystop = EarlyStopping(monitor = 'val_loss', min_delta = 0, patience = 10, ve
 callbacks = [earlystop, checkpoint]
 #training model
 epochs = 1
-model.fit(x_train, y_train, epochs = epochs, batch_size=8)
+model.fit(x_train, y_train, epochs = epochs, batch_size=1)
 #testing model
 score = model.evaluate(x_test, y_test, verbose=0) 
 #print('loss=', score[0]) 
