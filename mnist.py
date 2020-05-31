@@ -1,3 +1,6 @@
+import os
+import tensorflow as tf
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import numpy as np 
 import keras 
 from keras.datasets import mnist 
