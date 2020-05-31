@@ -8,7 +8,7 @@ from keras.layers import Conv2D, MaxPooling2D, Dropout
 from keras.layers import Flatten 
 from keras import backend as k
 #loading the data
-(x_train, y_train), (x_test, y_test) = mnist.load_data()
+(x_train, y_train), (x_test, y_test) = mnist.load_data(path='/task3/dataset/mnist.npz')
 #shape
 img_rows, img_cols=28, 28
 #setting the input shape
