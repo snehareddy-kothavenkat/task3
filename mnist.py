@@ -40,7 +40,7 @@ model.add(MaxPooling2D(pool_size=(2, 2)))
 #flattening layer
 model.add(Flatten())
 #hidden layer 
-model.add(Dense(8, activation='sigmoid'))
+model.add(Dense(8, activation='relu'))
 #output layer
 model.add(Dense(10, activation='softmax'))
 #summarizing
