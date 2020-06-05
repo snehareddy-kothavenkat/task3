@@ -63,7 +63,7 @@ l = len(acc)
 final_acc = acc[l-1]
 print(final_acc)
 final_acc1 = 100 * final_acc
-print(final_acc1)
+print("Accuracy of the model is ",final_acc1,"%.")
 str_final_acc=str(final_acc1)
 #saving model accuracy
 f = open("/task3/accuracy.txt", "w")
