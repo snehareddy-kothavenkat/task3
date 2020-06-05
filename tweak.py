@@ -7,20 +7,22 @@ for x in contents:
 	if x == "model.add(Conv2D(8,kernel_size=(3,3),activation='relu')) \n":
 		conv_count = conv_count+1 
 			
-print(conv_count)
+print("No. of Convolutional layers added = ",conv_count)
 
 hidden_count =0
 for x in contents:
 	if x == "model.add(Dense(8, activation='sigmoid'))\n":
 		hidden_count = hidden_count+1 
 
-print(hidden_count)
+print("No. of Hidden layers added = ",hidden_count)
 
 if conv_count < 2:
-	print("Add a Convolutional layer")	
+	print("Adding Convolutional layers")	
 	contents.insert(39, "model.add(Conv2D(8,kernel_size=(3,3),activation='relu')) \n")
 	contents.insert(40, "model.add(Conv2D(8,kernel_size=(3,3),activation='relu')) \n")
+	print("Adding Pooling layers")
 	contents.insert(41, "model.add(MaxPooling2D(pool_size=(2, 2))) \n")
+	print("Increasing no. of Epochs")
 	num = int(contents[60][9])
 	num = num + 2
 	str_num = str(num)
@@ -31,11 +33,12 @@ if conv_count < 2:
 	f.write(contents)
 	f.close()
 elif conv_count == 2:
-	print("Convolution layers are correct")
+	print("Sufficient Convolution layers are added.")
 	if hidden_count < 2:
-		print("Add a Hidden layer")
+		print("Adding Hidden layers")
 		contents.insert(46, "model.add(Dense(8, activation='relu'))\n")
 		contents.insert(47, "model.add(Dense(8, activation='relu'))\n")
+		print("Increasing no. of Epochs")
 		num = int(contents[62][9])
 		num = num + 2
 		str_num = str(num)
@@ -46,8 +49,8 @@ elif conv_count == 2:
 		f.write(contents)
 		f.close()
 	elif hidden_count == 2:
-		print("Hidden layers are correct")
-		print("Increase Epochs")
+		print("Sufficient Hidden layers are added.")
+		print("Increasing no. of Epochs")
 		num = int(contents[62][9])
 		num = num + 2
 		str_num = str(num)
