@@ -21,11 +21,11 @@ if conv_count < 2:
 	contents.insert(36, "model.add(Conv2D(8,kernel_size=(3,3),activation='relu')) \n")
 	contents.insert(37, "model.add(Conv2D(8,kernel_size=(3,3),activation='relu')) \n")
 	contents.insert(38, "model.add(MaxPooling2D(pool_size=(2, 2))) \n")
-	num = int(contents[57][9])
+	num = int(contents[60][9])
 	num = num + 2
 	str_num = str(num)
-	contents[57] = "epochs = "+str_num+"\n"
-	print(contents[57])
+	contents[60] = "epochs = "+str_num+"\n"
+	print(contents[60])
 	f = open("/root/task3/cnn.py", "w")
 	contents = "".join(contents)
 	f.write(contents)
@@ -34,13 +34,13 @@ elif conv_count == 2:
 	print("Convolution layers are correct")
 	if hidden_count < 2:
 		print("Add a Hidden layer")
-		contents.insert(43, "model.add(Dense(8, activation='sigmoid'))\n")
-		contents.insert(44, "model.add(Dense(8, activation='sigmoid'))\n")
-		num = int(contents[59][9])
+		contents.insert(46, "model.add(Dense(8, activation='relu'))\n")
+		contents.insert(47, "model.add(Dense(8, activation='relu'))\n")
+		num = int(contents[62][9])
 		num = num + 2
 		str_num = str(num)
-		contents[59] = "epochs = "+str_num+"\n"
-		print(contents[59])
+		contents[62] = "epochs = "+str_num+"\n"
+		print(contents[62])
 		f = open("/root/task3/cnn.py", "w")
 		contents = "".join(contents)
 		f.write(contents)
@@ -48,11 +48,11 @@ elif conv_count == 2:
 	elif hidden_count == 2:
 		print("Hidden layers are correct")
 		print("Increase Epochs")
-		num = int(contents[59][9])
+		num = int(contents[62][9])
 		num = num + 2
 		str_num = str(num)
-		contents[59] = "epochs = "+str_num+"\n"
-		print(contents[59])
+		contents[62] = "epochs = "+str_num+"\n"
+		print(contents[62])
 		f = open("/root/task3/mnist.py", "w")
 		contents = "".join(contents)
 		f.write(contents)
