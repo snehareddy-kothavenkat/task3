@@ -18,9 +18,9 @@ print(hidden_count)
 
 if conv_count < 2:
 	print("Add a Convolutional layer")	
-	contents.insert(36, "model.add(Conv2D(8,kernel_size=(3,3),activation='relu')) \n")
-	contents.insert(37, "model.add(Conv2D(8,kernel_size=(3,3),activation='relu')) \n")
-	contents.insert(38, "model.add(MaxPooling2D(pool_size=(2, 2))) \n")
+	contents.insert(39, "model.add(Conv2D(8,kernel_size=(3,3),activation='relu')) \n")
+	contents.insert(40, "model.add(Conv2D(8,kernel_size=(3,3),activation='relu')) \n")
+	contents.insert(41, "model.add(MaxPooling2D(pool_size=(2, 2))) \n")
 	num = int(contents[60][9])
 	num = num + 2
 	str_num = str(num)
