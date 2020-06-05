@@ -62,7 +62,7 @@ acc = history.history['accuracy']
 l = len(acc)
 final_acc = acc[l-1]
 print(final_acc)
-final_acc1 = acc[l-1]
+final_acc1 = 100 * final_acc
 print(final_acc1)
 str_final_acc=str(final_acc1)
 #saving model accuracy
