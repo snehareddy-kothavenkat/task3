@@ -56,16 +56,15 @@ earlystop = EarlyStopping(monitor = 'val_loss', min_delta = 0, patience = 10, ve
 callbacks = [earlystop, checkpoint]
 #training model
 epochs = 1
-model.fit(x_train, y_train, epochs = epochs, batch_size=1, verbose=0)
-#testing model
-score = model.evaluate(x_test, y_test, verbose=0) 
-#print('loss=', score[0]) 
-#print('accuracy=', score[1])
-#getting model accuracy
-acc=score[1]
-final_acc=acc*100
+history = model.fit(x_train, y_train, epochs = epochs, batch_size=1, verbose=0)
+acc = history.history['accuracy']
+#score = model.evaluate(x_test, y_test, verbose=0) 
+l = len(acc)
+final_acc = acc[l-1]
 print(final_acc)
-str_final_acc=str(final_acc)
+final_acc1 = acc[l-1]
+print(final_acc1)
+str_final_acc=str(final_acc1)
 #saving model accuracy
 f = open("/task3/accuracy.txt", "w")
 f.write(str_final_acc)
