@@ -1,4 +1,4 @@
-f = open("/root/task3/cnn.py", "r")
+f = open("/root/task3/mnist.py", "r")
 contents = f.readlines()
 f.close()
 
@@ -26,7 +26,7 @@ if conv_count < 2:
 	str_num = str(num)
 	contents[60] = "epochs = "+str_num+"\n"
 	print(contents[60])
-	f = open("/root/task3/cnn.py", "w")
+	f = open("/root/task3/mnist.py", "w")
 	contents = "".join(contents)
 	f.write(contents)
 	f.close()
@@ -41,7 +41,7 @@ elif conv_count == 2:
 		str_num = str(num)
 		contents[62] = "epochs = "+str_num+"\n"
 		print(contents[62])
-		f = open("/root/task3/cnn.py", "w")
+		f = open("/root/task3/mnist.py", "w")
 		contents = "".join(contents)
 		f.write(contents)
 		f.close()
