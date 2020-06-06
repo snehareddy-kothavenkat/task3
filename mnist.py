@@ -57,16 +57,16 @@ callbacks = [earlystop, checkpoint]
 #training model
 epochs = 1
 history = model.fit(x_train, y_train, epochs = epochs, batch_size=1, verbose=2)
-acc = history.history['accuracy']
+#acc = history.history['accuracy']
 #score = model.evaluate(x_test, y_test, verbose=0) 
-l = len(acc)
-final_acc = acc[l-1]
-print(final_acc , flush = True)
-final_acc1 = 100 * final_acc
-str_final_acc=str(final_acc1)
+#l = len(acc)
+#final_acc = acc[l-1]
+#print(final_acc , flush = True)
+#final_acc1 = 100 * final_acc
+#str_final_acc=str(final_acc1)
 #saving model accuracy
 f = open("/task3/accuracy.txt", "w")
-f.write(str_final_acc)
+f.write(100 * history.history['val_accuracy'][-1])
 f.close()
-print(final_acc1, flush = True)
+print("Accuracy of the Trained model is : {} %".format (100 * history.history['val_accuarcy'][-1]))
 model.save('/task3/model.h5')
