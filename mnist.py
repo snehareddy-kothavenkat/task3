@@ -51,21 +51,22 @@ model.compile(optimizer=keras.optimizers.Adadelta(),
 			metrics=['accuracy'])
 #callbacks
 from keras.callbacks import ModelCheckpoint, EarlyStopping
-checkpoint = ModelCheckpoint("mnist.h5", monitor="val_loss", mode="min", verbose=1)
+checkpoint = ModelCheckpoint("model.h5", monitor="val_loss", mode="min", verbose=1)
 earlystop = EarlyStopping(monitor = 'val_loss', min_delta = 0, patience = 10, verbose = 1,restore_best_weights = True)
 callbacks = [earlystop, checkpoint]
 #training model
 epochs = 1
-history = model.fit(x_train, y_train, epochs = epochs, batch_size=1, verbose=0)
+history = model.fit(x_train, y_train, epochs = epochs, batch_size=1, verbose=2)
 acc = history.history['accuracy']
 #score = model.evaluate(x_test, y_test, verbose=0) 
 l = len(acc)
 final_acc = acc[l-1]
-print(final_acc)
+#print(final_acc)
 final_acc1 = 100 * final_acc
-print("Accuracy of the model is ",final_acc1,"%.")
 str_final_acc=str(final_acc1)
 #saving model accuracy
 f = open("/task3/accuracy.txt", "w")
 f.write(str_final_acc)
 f.close()
+print("Accuracy of the model is ",final_acc1,"%.")
+model.save('/task3/model.h5')
