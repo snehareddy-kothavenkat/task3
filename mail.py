@@ -3,25 +3,21 @@ acc = f.readlines()
 f.close()
 accuracy = str(acc[0])
 import smtplib
-with smtplib.SMTP('smtp.gmail.com',587) as smtp:
-	smtp.ehlo()
-import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from_addr = 'testuser2352@gmail.com'
+to_addr= 'kvsnehareddy772@gmail.com'
+text = ''' Hello Developer !!! Your MNIST Model has reached the desired accuracy - ''' accuracy
 
-from_addr = 'jenkins@gmail.com'
-to_addr = 'onlytesting2119@gmail.com'
-text = accuracy
-
-username = 'onlytesting2119@gmail.com'
-password = 'Testing@123'
+username = 'testuser2352@gmail.com'
+password = '#testuser2352#'
 
 msg = MIMEMultipart()
 
 msg['From'] = from_addr
 msg['To'] = to_addr
-msg['Subject'] = "Accuracy"
-msg.attach(MIMEText(text))
+msg['Subject'] = "Accuracy of your mnist model"
+msg.attach(MIMEText(text, 'plain'))
 
 
 server = smtplib.SMTP('smtp.gmail.com:587')
