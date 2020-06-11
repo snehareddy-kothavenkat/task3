@@ -5,12 +5,12 @@ accuracy = str(acc[0])
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from_addr = 'testuser2352@gmail.com'
+from_addr = 'testuser3792@gmail.com'
 to_addr= 'kvsnehareddy772@gmail.com'
 text = ''' Hello Developer !!! Your MNIST Model has reached the desired accuracy > 95 % '''
 
-username = 'testuser2352@gmail.com'
-password = '#testuser2352#'
+username = 'testuser3792@gmail.com'
+password = 'reddy@02'
 
 msg = MIMEMultipart()
 
