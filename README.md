@@ -11,16 +11,6 @@ Creating required number of jobs in jenkins to test, notify, train , tweak , ret
 
 
 
-WORKFLOW/ALGORITHM OF THE TASK
-
-
-Pull the code from GitHub. 
-Execute relevant model accordingly .
-Check for desired accuracy if less tweak the model and go to step 2 else go go step 4.
-On achieving the desired accuracy notify the developer through mail .
-Monitor the containers from crashing during the entire task.
-
-
 DESCRIPTION OF THE TASK
 
 
